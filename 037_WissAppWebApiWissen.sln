@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WissAppEF", "WissAppEF\Wiss
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppCore", "AppCore\AppCore.csproj", "{05E3B5C6-B4F1-455A-ABF5-7B74E2692876}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WissAppWebApi", "WissAppWebApi\WissAppWebApi.csproj", "{A2C971E0-A7CB-49DE-A25F-2E39731A244E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppCore.Tests", "AppCore.Tests\AppCore.Tests.csproj", "{4FDC61AE-069D-4961-86AE-849787D780E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{05E3B5C6-B4F1-455A-ABF5-7B74E2692876}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05E3B5C6-B4F1-455A-ABF5-7B74E2692876}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05E3B5C6-B4F1-455A-ABF5-7B74E2692876}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2C971E0-A7CB-49DE-A25F-2E39731A244E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2C971E0-A7CB-49DE-A25F-2E39731A244E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2C971E0-A7CB-49DE-A25F-2E39731A244E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2C971E0-A7CB-49DE-A25F-2E39731A244E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FDC61AE-069D-4961-86AE-849787D780E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FDC61AE-069D-4961-86AE-849787D780E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FDC61AE-069D-4961-86AE-849787D780E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FDC61AE-069D-4961-86AE-849787D780E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

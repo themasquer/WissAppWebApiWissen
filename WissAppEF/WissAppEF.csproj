@@ -56,6 +56,10 @@
     <Compile Include="Migrations\202002241210536_DBv1.designer.cs">
       <DependentUpon>202002241210536_DBv1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002261303522_DBv2.cs" />
+    <Compile Include="Migrations\202002261303522_DBv2.designer.cs">
+      <DependentUpon>202002261303522_DBv2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -72,6 +76,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202002241210536_DBv1.resx">
       <DependentUpon>202002241210536_DBv1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002261303522_DBv2.resx">
+      <DependentUpon>202002261303522_DBv2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

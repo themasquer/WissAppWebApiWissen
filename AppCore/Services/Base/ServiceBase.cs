@@ -8,7 +8,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace AppCore.Service.Base
+namespace AppCore.Services.Base
 {
     public abstract class ServiceBase<TEntity> : IDisposable where TEntity : class, new() 
     {
