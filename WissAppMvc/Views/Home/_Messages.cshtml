@@ -1,0 +1,14 @@
+﻿@model HomeIndexViewModel
+
+@foreach (var message in Model.Messages)
+{
+    if (message.Sent)
+    {
+        <span class="pull-right">@message.Message</span>
+    }
+    else
+    {
+        <span class="pull-left">@message.Message</span>
+    }
+    <br />
+}

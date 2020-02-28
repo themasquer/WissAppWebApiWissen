@@ -1,0 +1,401 @@
+{
+	"info": {
+		"_postman_id": "4c4d654a-bdff-4849-8c02-ab4ada4bdadc",
+		"name": "WissApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "UsersGetAllJSON",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer sp7h9TfSCrtqThGmHxGjmOb_hD0q5uQaozcylg--GsKXifTvee_bSg-MfxcGMjSp3DsX9YEOf6l4YwA92wplQez1c1RTrwnqXKq_kC0Nx5uhRYCnWu9R-5MpABrilQ2lhsQUfkAsctCL9XeN7n6KdavyBjJxF6GvNlEvOGDI2UnwuGkm_MquXru-PSso0K9YWrOCtLHZkKKpxktrZL1it4b9_kI3_n9iwgmVm-D1uNQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:49979/api/Users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49979",
+					"path": [
+						"api",
+						"Users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UsersGetAllXML",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/xml"
+					},
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer sp7h9TfSCrtqThGmHxGjmOb_hD0q5uQaozcylg--GsKXifTvee_bSg-MfxcGMjSp3DsX9YEOf6l4YwA92wplQez1c1RTrwnqXKq_kC0Nx5uhRYCnWu9R-5MpABrilQ2lhsQUfkAsctCL9XeN7n6KdavyBjJxF6GvNlEvOGDI2UnwuGkm_MquXru-PSso0K9YWrOCtLHZkKKpxktrZL1it4b9_kI3_n9iwgmVm-D1uNQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:49979/api/Users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49979",
+					"path": [
+						"api",
+						"Users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UsersGetAllEntities",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer sp7h9TfSCrtqThGmHxGjmOb_hD0q5uQaozcylg--GsKXifTvee_bSg-MfxcGMjSp3DsX9YEOf6l4YwA92wplQez1c1RTrwnqXKq_kC0Nx5uhRYCnWu9R-5MpABrilQ2lhsQUfkAsctCL9XeN7n6KdavyBjJxF6GvNlEvOGDI2UnwuGkm_MquXru-PSso0K9YWrOCtLHZkKKpxktrZL1it4b9_kI3_n9iwgmVm-D1uNQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:49979/api/Users/GetAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49979",
+					"path": [
+						"api",
+						"Users",
+						"GetAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UsersGetById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer sp7h9TfSCrtqThGmHxGjmOb_hD0q5uQaozcylg--GsKXifTvee_bSg-MfxcGMjSp3DsX9YEOf6l4YwA92wplQez1c1RTrwnqXKq_kC0Nx5uhRYCnWu9R-5MpABrilQ2lhsQUfkAsctCL9XeN7n6KdavyBjJxF6GvNlEvOGDI2UnwuGkm_MquXru-PSso0K9YWrOCtLHZkKKpxktrZL1it4b9_kI3_n9iwgmVm-D1uNQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:49979/api/Users/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49979",
+					"path": [
+						"api",
+						"Users",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUserById",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer sp7h9TfSCrtqThGmHxGjmOb_hD0q5uQaozcylg--GsKXifTvee_bSg-MfxcGMjSp3DsX9YEOf6l4YwA92wplQez1c1RTrwnqXKq_kC0Nx5uhRYCnWu9R-5MpABrilQ2lhsQUfkAsctCL9XeN7n6KdavyBjJxF6GvNlEvOGDI2UnwuGkm_MquXru-PSso0K9YWrOCtLHZkKKpxktrZL1it4b9_kI3_n9iwgmVm-D1uNQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:49979/api/Users/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49979",
+					"path": [
+						"api",
+						"Users",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer sp7h9TfSCrtqThGmHxGjmOb_hD0q5uQaozcylg--GsKXifTvee_bSg-MfxcGMjSp3DsX9YEOf6l4YwA92wplQez1c1RTrwnqXKq_kC0Nx5uhRYCnWu9R-5MpABrilQ2lhsQUfkAsctCL9XeN7n6KdavyBjJxF6GvNlEvOGDI2UnwuGkm_MquXru-PSso0K9YWrOCtLHZkKKpxktrZL1it4b9_kI3_n9iwgmVm-D1uNQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "RoleId",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "UserName",
+							"value": "leo",
+							"type": "text"
+						},
+						{
+							"key": "Password",
+							"value": "leo",
+							"type": "text"
+						},
+						{
+							"key": "Email",
+							"value": "leo@wissen.com",
+							"type": "text"
+						},
+						{
+							"key": "School",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "Location",
+							"value": "Ankara",
+							"type": "text"
+						},
+						{
+							"key": "BirthDate",
+							"value": "2014-03-03T00:00:00",
+							"type": "text"
+						},
+						{
+							"key": "Gender",
+							"value": "m",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:49979/api/Users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49979",
+					"path": [
+						"api",
+						"Users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutUser",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer sp7h9TfSCrtqThGmHxGjmOb_hD0q5uQaozcylg--GsKXifTvee_bSg-MfxcGMjSp3DsX9YEOf6l4YwA92wplQez1c1RTrwnqXKq_kC0Nx5uhRYCnWu9R-5MpABrilQ2lhsQUfkAsctCL9XeN7n6KdavyBjJxF6GvNlEvOGDI2UnwuGkm_MquXru-PSso0K9YWrOCtLHZkKKpxktrZL1it4b9_kI3_n9iwgmVm-D1uNQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Id\": 5,\r\n    \"RoleId\": 1,\r\n    \"UserName\": \"çağıl\",\r\n    \"Password\": \"çağıl\",\r\n    \"Email\": \"cagil@wissen.com\",\r\n    \"School\": \"Bilkent Üniversitesi\",\r\n    \"Location\": \"Ankara\",\r\n    \"BirthDate\": \"1980-03-03T00:00:00\",\r\n    \"Gender\": \"m\",\r\n    \"IsActive\": true\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:49979/api/Users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49979",
+					"path": [
+						"api",
+						"Users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "fatih",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "fatih",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:49979/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49979",
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer E-_jPvoBTn4e_8RHzBZyn1_-IDaJ-HDBfZ1gKq_YJScCccgmf2g6WVF3q-8SY3umf-qg7H2vxnPSuLcvxmeQqwE4XagIJmDLjBdL24CRfuz3yTxHwPqnkpk0jAb50dR12zE_OU8lL6B9g_NJbX4_fiEBL9bSrx9j2DRWOTxHMWc4CIi-42qKKNoOYeTP_T07fwt8rcEf4l6uvSYjo8mCCLwhuWq_kiLbEZ0e9N0ui-o",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:49979/api/Users/Logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49979",
+					"path": [
+						"api",
+						"Users",
+						"Logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoggedoutUsers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer sp7h9TfSCrtqThGmHxGjmOb_hD0q5uQaozcylg--GsKXifTvee_bSg-MfxcGMjSp3DsX9YEOf6l4YwA92wplQez1c1RTrwnqXKq_kC0Nx5uhRYCnWu9R-5MpABrilQ2lhsQUfkAsctCL9XeN7n6KdavyBjJxF6GvNlEvOGDI2UnwuGkm_MquXru-PSso0K9YWrOCtLHZkKKpxktrZL1it4b9_kI3_n9iwgmVm-D1uNQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:49979/api/Users/LoggedoutUsers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49979",
+					"path": [
+						"api",
+						"Users",
+						"LoggedoutUsers"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

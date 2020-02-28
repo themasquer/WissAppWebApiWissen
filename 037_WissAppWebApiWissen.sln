@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WissAppWebApi", "WissAppWeb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppCore.Tests", "AppCore.Tests\AppCore.Tests.csproj", "{4FDC61AE-069D-4961-86AE-849787D780E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WissAppMvc", "WissAppMvc\WissAppMvc.csproj", "{3EEE1C04-9F60-4D73-90BF-FA5BADF5FA30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{4FDC61AE-069D-4961-86AE-849787D780E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FDC61AE-069D-4961-86AE-849787D780E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FDC61AE-069D-4961-86AE-849787D780E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EEE1C04-9F60-4D73-90BF-FA5BADF5FA30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EEE1C04-9F60-4D73-90BF-FA5BADF5FA30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EEE1C04-9F60-4D73-90BF-FA5BADF5FA30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EEE1C04-9F60-4D73-90BF-FA5BADF5FA30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

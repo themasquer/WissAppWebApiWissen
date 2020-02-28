@@ -1,0 +1,39 @@
+﻿@model HomeIndexViewModel
+
+@{
+    var ajaxOptions = new AjaxOptions()
+    {
+        UpdateTargetId = "d_messages",
+        InsertionMode = InsertionMode.Replace
+    };
+}
+
+<div class="row" id="d_usersmessages">
+    <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+            @foreach (var user in Model.Users)
+            {
+                <li>
+                    <table style="width: 100%;">
+                        <tr>
+                            <td style="width: 15%;">
+                                <span class="badge badge-light">@user.MessageCount</span>
+                            </td>
+                            <td>
+                                @Ajax.ActionLink(user.UserName, "Messages", "Home", new { id = user.UserId }, ajaxOptions)
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="col-md-9" id="d_messages">
+        @Html.Partial("_Messages", Model)
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+}
