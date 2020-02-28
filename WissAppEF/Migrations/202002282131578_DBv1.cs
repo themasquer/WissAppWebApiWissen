@@ -48,6 +48,7 @@
                         BirthDate = c.DateTime(storeType: "date"),
                         Gender = c.String(maxLength: 1, unicode: false),
                         IsActive = c.Boolean(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Roles", t => t.RoleId)

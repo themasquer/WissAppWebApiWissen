@@ -13,7 +13,7 @@ namespace WissAppEF.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202002241210536_DBv1"; }
+            get { return "202002282131578_DBv1"; }
         }
         
         string IMigrationMetadata.Source

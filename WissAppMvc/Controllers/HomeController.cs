@@ -89,6 +89,7 @@ namespace WissAppMvc.Controllers
 
         [HttpPost]
         [HandleError]
+        [ValidateAntiForgeryToken]
         public ActionResult Login(UsersLoginModel usersModel)
         {
             if (ModelState.IsValid)
