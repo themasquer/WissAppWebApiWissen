@@ -4,7 +4,8 @@
     var ajaxOptions = new AjaxOptions()
     {
         UpdateTargetId = "d_messages",
-        InsertionMode = InsertionMode.Replace
+        InsertionMode = InsertionMode.Replace,
+        OnSuccess = "clearMessage"
     };
 }
 
@@ -13,40 +14,40 @@
         <ul class="nav nav-pills nav-stacked">
             @foreach (var user in Model.Users)
             {
-            <li>
-                @*<table style="width: 100%;">
-                    <tr>
-                        <td style="width: 15%;">
-                            <span class="badge badge-light">@user.MessageCount</span>
-                        </td>
-                        <td>
-                            @Ajax.ActionLink(user.UserName, "Messages", "Home", new { id = user.UserId }, ajaxOptions)
-                        </td>
-                    </tr>
-                </table>*@
+                <li>
+                    @*<table style="width: 100%;">
+                            <tr>
+                                <td style="width: 15%;">
+                                    <span class="badge badge-light">@user.MessageCount</span>
+                                </td>
+                                <td>
+                                    @Ajax.ActionLink(user.UserName, "Messages", "Home", new { id = user.UserId }, ajaxOptions)
+                                </td>
+                            </tr>
+                        </table>*@
 
-                @*<span class="badge badge-light">@user.MessageCount</span>*@
-                @*@Ajax.ActionLink(user.UserName, "Messages", "Home", new { id = user.UserId }, ajaxOptions)*@
-                <a data-ajax="true" data-ajax-mode="replace" data-ajax-update="#d_messages" data-id="@user.UserId" href="/Home/Messages/@user.UserId" class="a_user"><span class="badge badge-light">@user.MessageCount</span>&nbsp;@user.UserName</a>
-            </li>
+                    @*<span class="badge badge-light">@user.MessageCount</span>*@
+                    @*@Ajax.ActionLink(user.UserName, "Messages", "Home", new { id = user.UserId }, ajaxOptions)*@
+                    <a data-ajax="true" data-ajax-mode="replace" data-ajax-update="#d_messages" data-id="@user.UserId" href="/Home/Messages/@user.UserId" class="a_user"><span class="badge badge-light">@user.MessageCount</span>&nbsp;@user.UserName</a>
+                </li>
             }
         </ul>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-9" style="padding-left: 0px !important; padding-right: 0px !important;">
         <div id="d_messages" style="height: 400px; width: 100%; overflow-y: auto;">
             @Html.Partial("_Messages", Model)
         </div>
         <div style="width: 100%;">
             @using (Ajax.BeginForm("Message", ajaxOptions))
             {
-                <input type="text" name="ReceiverId" id="ReceiverId" value="" />
+                <input type="hidden" name="ReceiverId" id="ReceiverId" value="" />
                 <table style="width: 100%;">
                     <tr>
                         <td style="width: 90%;">
-                            @Html.TextBoxFor(e => e.Message, new { @class = "form-control" })
+                            @Html.TextBoxFor(e => e.Message, new { @class = "form-control", id = "tb_message" })
                         </td>
                         <td>
-                            <button type="submit" class="btn btn-info">Send</button>
+                            <button type="submit" class="btn btn-info" style="width: 100%;">Send</button>
                         </td>
                     </tr>
                 </table>
@@ -82,5 +83,8 @@
                 $("#ReceiverId").val($(this).data("id"));
             });
         });
+        function clearMessage() {
+            $("#tb_message").val("");
+        }
     </script>
 }

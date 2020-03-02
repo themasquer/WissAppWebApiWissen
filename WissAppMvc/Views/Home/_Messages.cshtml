@@ -1,15 +1,23 @@
 ﻿@model HomeIndexViewModel
 
-@foreach (var message in Model.Messages)
+@if (ViewBag.Validation != null)
 {
-    if (message.Sent)
-    {
-        <span class="pull-right">@message.Message</span>
-    }
-    else
-    {
-        <span class="pull-left">@message.Message</span>
-    }
+    <span style="color: red;">@ViewBag.Validation</span>
     <br />
 }
-@TempData["validation"]
+
+@if (Model != null)
+{
+    foreach (var message in Model.Messages)
+    {
+        if (message.Sent)
+        {
+            <span class="pull-right">@message.Message</span>
+        }
+        else
+        {
+            <span class="pull-left">@message.Message</span>
+        }
+        <br />
+    }
+}

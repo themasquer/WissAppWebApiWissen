@@ -65,52 +65,72 @@ namespace WissAppMvc.Controllers
         [Authorize]
         public ActionResult Messages(int id)
         {
-            var userMessages = userMessagesService.GetEntities(e => (e.Senders.UserName == User.Identity.Name && e.ReceiverId == id) || (e.Receivers.UserName == User.Identity.Name && e.SenderId == id)).Select(e => new MessagesModel
+            if (Request.IsAjaxRequest())
             {
-                Message = e.Messages.Message,
-                Date = e.Messages.Date.ToShortDateString() + " " + e.Messages.Date.ToLongTimeString(),
-                User = e.SenderId == id ? e.Senders.UserName : e.Receivers.UserName,
-                Sent = e.SenderId == id
-            }).ToList();
-            var model = new HomeIndexViewModel()
-            {
-                Messages = userMessages,
-                Users = new List<UsersModel>()
-            };
-            return PartialView("_Messages", model);
+                var userMessages = userMessagesService
+                    .GetEntities(e =>
+                        (e.Senders.UserName == User.Identity.Name && e.ReceiverId == id) ||
+                        (e.Receivers.UserName == User.Identity.Name && e.SenderId == id)).Select(e => new MessagesModel
+                    {
+                        Message = e.Messages.Message,
+                        Date = e.Messages.Date.ToShortDateString() + " " + e.Messages.Date.ToLongTimeString(),
+                        User = e.SenderId == id ? e.Senders.UserName : e.Receivers.UserName,
+                        Sent = e.SenderId == id
+                    }).ToList();
+                var model = new HomeIndexViewModel()
+                {
+                    Messages = userMessages,
+                    Users = new List<UsersModel>()
+                };
+                return PartialView("_Messages", model);
+            }
+            return new EmptyResult();
         }
 
+        [Authorize]
+        [HandleError]
         [HttpPost]
         public ActionResult Message(HomeIndexViewModel homeIndexViewModel)
         {
-            if (ModelState.IsValid)
+            if (Request.IsAjaxRequest())
             {
-                var message = new Messages()
+                if (ModelState.IsValid)
                 {
-                    Message = homeIndexViewModel.Message,
-                    Date = DateTime.Now
-                };
-                messageService.AddEntity(message);
-                var sender = userService.GetEntity(e => e.UserName == User.Identity.Name);
-                var userMessage = new UsersMessages()
-                {
-                    MessageId = message.Id,
-                    SenderId = sender.Id,
-                    ReceiverId = homeIndexViewModel.ReceiverId
-                };
-                userMessagesService.AddEntity(userMessage);
-                var userMessages = userMessagesService.GetEntities(e => (e.Senders.UserName == User.Identity.Name && e.ReceiverId == homeIndexViewModel.ReceiverId.Value) || (e.Receivers.UserName == User.Identity.Name && e.SenderId == homeIndexViewModel.ReceiverId.Value)).Select(e => new MessagesModel
-                {
-                    Message = e.Messages.Message,
-                    Date = e.Messages.Date.ToShortDateString() + " " + e.Messages.Date.ToLongTimeString(),
-                    User = e.SenderId == homeIndexViewModel.ReceiverId.Value ? e.Senders.UserName : e.Receivers.UserName,
-                    Sent = e.SenderId == homeIndexViewModel.ReceiverId.Value
-                }).ToList();
-                homeIndexViewModel.Messages = userMessages;
-                return PartialView("_Messages", homeIndexViewModel);
+                    var message = new Messages()
+                    {
+                        Message = homeIndexViewModel.Message,
+                        Date = DateTime.Now
+                    };
+                    messageService.AddEntity(message);
+                    var sender = userService.GetEntity(e => e.UserName == User.Identity.Name);
+                    var userMessage = new UsersMessages()
+                    {
+                        MessageId = message.Id,
+                        SenderId = sender.Id,
+                        ReceiverId = homeIndexViewModel.ReceiverId
+                    };
+                    userMessagesService.AddEntity(userMessage);
+                    var userMessages = userMessagesService.GetEntities(e =>
+                            (e.Senders.UserName == User.Identity.Name &&
+                             e.ReceiverId == homeIndexViewModel.ReceiverId.Value) ||
+                            (e.Receivers.UserName == User.Identity.Name &&
+                             e.SenderId == homeIndexViewModel.ReceiverId.Value))
+                        .Select(e => new MessagesModel
+                        {
+                            Message = e.Messages.Message,
+                            Date = e.Messages.Date.ToShortDateString() + " " + e.Messages.Date.ToLongTimeString(),
+                            User = e.SenderId == homeIndexViewModel.ReceiverId.Value
+                                ? e.Senders.UserName
+                                : e.Receivers.UserName,
+                            Sent = e.SenderId == homeIndexViewModel.ReceiverId.Value
+                        }).ToList();
+                    homeIndexViewModel.Messages = userMessages;
+                    return PartialView("_Messages", homeIndexViewModel);
+                }
+                ViewBag.Validation = "Please select a user and enter a message...";
+                return PartialView("_Messages", null);
             }
-            TempData["validation"] = "Please select a user and enter a message...";
-            return RedirectToAction("Messages", new { id = homeIndexViewModel.ReceiverId });
+            return new EmptyResult();
         }
 
         public ActionResult Login()
